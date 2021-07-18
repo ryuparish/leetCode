@@ -1,4 +1,10 @@
 import java.lang.Math;
+// Lemma: There can only be an abundance of either left or right parentheses.
+// Both would result in a contradiction. 
+// Meaning, if we pass through the list forward or backward, we must find the largest substring of valid parentheses.
+//
+// The crucial operation that ensures this is the recognition of the invalid starts 
+// from either side being the sole ability to surpass the other pass's ambiguity.
 class Solution {
     public int longestValidParentheses(String s) {
         // Every time leftCount == rightCount, we can use 2 * left or 2 * right as the longest substring
