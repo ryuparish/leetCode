@@ -1,0 +1,5 @@
+Here is a list of edge cases you should always watch out for (especially in Easy and Hard):
+Arrays and Strings:
+    1. Empty sequence.
+    2. Sequence with only one letter or int.
+    3. Sequence with only a space or a 0.
