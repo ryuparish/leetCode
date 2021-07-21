@@ -15,7 +15,7 @@ public:
             backHead = nums.size() - 1;
             
             // For running over redundant searches
-            if(i < 0 && nums[i] == num[i-1]){continue;}
+            if(i > 0 && nums[i] == num[i-1]){continue;}
             
             int sum;
             while(backHead > frontHead){
