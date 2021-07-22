@@ -1,5 +1,6 @@
 // Starting from answer and working backwards by iterating towards the bottom, when at a bottom, we 
 // recall to the top (bottom up).
+// BU and TD refers to where the recursion/iteration returns from.
 class Solution {
     public static boolean isMatch(String text, String pattern) {
         boolean[][] memo = new boolean[text.length() + 1][pattern.length() + 1];
