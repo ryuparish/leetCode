@@ -1,67 +1,95 @@
-class Solution {
-    List<List<String>> output = new ArrayList<List<String>>();
+import java.util.*;
+class Solution{
     int N;
-    int size;
-    
-    private List<String> createBoard(char[][] state) {
-        List<String> board = new ArrayList<String>();
-        for (int row = 0; row < size; row++) {
-            String current_row = new String(state[row]);
-            board.add(current_row);
+    ArrayList<List<String>> myAnswers;
+    // Coverting the 2D char array into List of strings
+    public List<String> createAnswer(char[][] board){
+        List<String> convertedBoard = new ArrayList<String>();
+        for(int i = 0; i < board.length; ++i){
+            String newRow = new String(board[i]);
+            convertedBoard.add(newRow);
         }
-        
-        return board;
+        return convertedBoard;
     }
-    
-    boolean isSafe (int row, int column, char[][] board) {
-        int i, j;
-        // Checking horizontal left to right up to the column
-        for (i = 0; i < column; i ++) {
-            if (board[row][i] == 'Q') return false;
+
+
+    // Check only for the horizontally left, top left corner and the bottom left corner due to the nature of the traversal
+    public boolean isValid(int row, int column, char[][] board){
+        // Horizontal left
+        for(int i = row, j = 0; j < column; ++j){
+            if(board[i][j] == 'Q'){
+                return false;
+            }
         }
-        // Checking from the spot to the upper left corner
-        for (i = row, j = column; i >= 0 && j >= 0; i--, j--)
-           if (board[i][j] == 'Q')
-               return false;
-        // Checking from the spot to the bottom left corner
-        for (i = row, j = column; j >= 0 && i < N; i++, j--)
-           if (board[i][j] == 'Q')
-               return false;
-  
+
+        // Bottom left
+        for(int i = row, j = column; i < N && j >= 0; --j, ++i){
+            if(board[i][j] == 'Q'){
+                return false;
+            }
+        }
+        // Top left
+        for(int i = row, j = column; i >= 0 && j >= 0; --j, --i){
+            if(board[i][j] == 'Q'){
+                return false;
+            }
+        }
         return true;
     }
-    
-    
-    
-    void backtrack (int column, char[][] board) {
-        if (column >= N) {
-            output.add(createBoard(board));
-            return;
+            
+    public void findNQueens(int column, char[][] board){
+        // Base Case of if we are past the last column or if we are on the nth column (which is illegal)
+        if(column >= N){
+            List<String> answerBoard = createAnswer(board);
+            myAnswers.add(answerBoard);
         }
-        // The way this works is strange in the way that it goes from row to row on only the very first column, and checks all the columns by recursion only
-        // He also is able to get away by only checking the upper left and lower left because of this(nothing but dots will exist to the right at all times)
-        for (int row = 0; row < N; row ++) {
-            if (isSafe(row, column, board)) {
+        
+        for(int row = 0; row < N; ++row){
+            if(isValid(row, column, board)){
                 board[row][column] = 'Q';
-                backtrack(column + 1, board);
+                findNQueens(column+1, board);
                 board[row][column] = '.';
             }
         }
-        
     }
-    
-    public List<List<String>> solveNQueens(int n) {
+
+    // LeetCode version where we don't instatiate the class object(we would have to do extra work to change this.N to instantiatedClass.N)
+    public List<List<String>> solveNQueens(int n){
+        // Making the necessary variables global for this object
         this.N = n;
-        this.size = n;
-        char[][] board = new char[size][size];
-        for (int i = 0; i < n; i ++) {
-            for (int j = 0; j < n; j ++) {
+        this.myAnswers = new ArrayList<List<String>>();
+        char[][] board = new char[n][n];
+        for(int i = 0; i < board.length; ++i){
+            for(int j = 0; j < board[0].length; ++j){
                 board[i][j] = '.';
             }
         }
-        
-        backtrack(0, board);
-        
-        return output;
+        // Solving the currenly blank board
+        findNQueens(0, board);
+        return myAnswers;
     }
+
+    //public List<List<String>> solveNQueens(Solution mySolution, int n){
+    //    // Making the necessary variables global for this object
+    //    this.N = n;
+    //    this.myAnswers = new ArrayList<List<String>>();
+    //    char[][] board = new char[n][n];
+    //    for(int i = 0; i < board.length; ++i){
+    //        for(int j = 0; j < board[0].length; ++j){
+    //            board[i][j] = '.';
+    //        }
+    //    }
+    //    // Solving the currenly blank board
+    //    mySolution.findNQueens(0, board);
+    //    return this.myAnswers;
+    //}
+
+    //public static void main(String[] args){
+    //    Solution mySolution = new Solution();
+    //    int n = 4;
+    //    List<List<String>> theAnswers = mySolution.solveNQueens(mySolution, n);
+    //    System.out.println(theAnswers);
+    //    return;
+    //}
+        
 }
