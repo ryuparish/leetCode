@@ -1,0 +1,3 @@
+Dynamic Programming
+Recursion
+Back Tracking (especially for game-board related things)
