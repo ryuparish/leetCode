@@ -19,10 +19,10 @@ class Solution {
         // Build the string using the formulas
         int currIdx = 0;
         for(int i = 1; i <= n; ++i){
-            currIdx = k/factorials[n-i];
+            currIdx = (k-1)/factorials[n-i];
             myAnswer.append(Integer.toString(choices[currIdx]));
             choices.remove(currIdx);
-            k -= currIdx * factorialx[n-i];
+            k -= currIdx * factorialxn-i;
         }
         return myAnswer;
     }
