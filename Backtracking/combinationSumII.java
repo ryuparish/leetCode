@@ -18,6 +18,8 @@ class Solution {
             return;
         }
         for(int i = position; i < candidates.length; ++i){
+            // i > start for avoiding segfault on first value and then checking for the same value as before
+            if(i > start && nums[i] == nums[i-1]){continue;}
             // Simulate choosing the number and adding it to the current Path
             currPath.add(candidates[i]);
             // This does nothing until the base case where the 
@@ -25,7 +27,7 @@ class Solution {
             // The side effect is that currPath will have all the
             // values it was recursed with, but then they are removed
             // by the line right below each call
-            findSolutions(candidates, answers, currPath, target - candidates[i], i);
+            findSolutions(candidates, answers, currPath, target - candidates[i], i+1);
             currPath.remove(currPath.size() - 1);
         }
     }
