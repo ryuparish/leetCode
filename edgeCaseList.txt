@@ -3,6 +3,7 @@ Arrays and Strings:
     1. Empty sequence.
     2. Sequence with only one letter or int.
     3. Sequence with only a space or a 0.
+    4. Dealing with comparing two things of different sizes and/or one being empty.
 
 Linked Lists:
     1. Empty Head node and only one node.
