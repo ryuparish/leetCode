@@ -3,18 +3,18 @@ class Solution {
     // Recursing function for dp filling
     public int findPath(String s, String t, int i, int j){
         // Base Case where we have found a solution
-        if(j == t.length() + 1){
+        if(j == t.length()){
             return 1;
         }
 
         // Base Case where we are at the limit of the first word
-        if(i == s.length() + 1){
+        if(i == s.length()){
             return 0;
         }
         
 		// Base Case where there is a previously found path at this point.
         if(dp[i][j] != null){
-            return dp[i][j] == Result.TRUE ? 1 : 0;
+            return dp[i][j];
         }
 
         // If it is a match, we consider it and also try disregarding it
