@@ -19,8 +19,7 @@ class Solution {
     public boolean dp(int i, int j, String text, String pattern) {
         // If recursive call has been memoized already
         if (memo[i][j] != null) {
-            //return memo[i][j] == Result.TRUE;
-            return memo[i][j];
+            return memo[i][j] == Result.TRUE;
         }
         boolean ans;
 
