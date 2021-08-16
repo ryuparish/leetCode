@@ -3,3 +3,4 @@ Dynamic Programming
 Recursion
 Back Tracking (especially for game-board related things)
 Simulations by placing then removing and trying other incremented values.
+Binary Search to find numbers that cannot be algorithmically calculated in any other way.
