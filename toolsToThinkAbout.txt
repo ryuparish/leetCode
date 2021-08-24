@@ -3,6 +3,13 @@ Strategies:
     Looping/Recursing Backwards
     
     Dynamic Programming
+        This is basically making a greedy problem out of something that
+        is not greedy-able.
+        Methods:
+            - Do I know the target already? Can I do a bottom up approach?
+            - Do I have info(or can I create info) that will allow a
+            top down approach?
+                * Can I get information about the top row and left column?
     
     Recursion
     
