@@ -7,6 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+// TC: O(2n) -> O(n), SC: O(n)
 class Solution {
     // Gist: The path from the root to the target node will be recorded into a hashmap, with each node stored
     // with it's distance from the target node. For every node that is away from this path (including the target)
