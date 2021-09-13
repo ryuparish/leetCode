@@ -1,5 +1,5 @@
  class Solution {
-    // Will keep track of 
+    // For each number, there will be a list of indexes that contain that number.
     HashMap<Integer, List<Integer>> dupeMap = new HashMap<Integer, List<Integer>>();
 
     public Solution(int[] nums) {

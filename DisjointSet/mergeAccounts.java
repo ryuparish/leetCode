@@ -1,8 +1,9 @@
-lass Solution {
+class Solution {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         int id = 0;
         DSJ dis = new DSJ();
         // To map each email to a name. We need to keep track of all the unique emails for each name
+        // for mapping the unique emails to their parents later.
         HashMap<String, String> emailToName = new HashMap<String, String>();
         // For uniquity among the DSJ (DSJ IDer)
         // The DSU will function when we see the same name twice in this hashmap.
@@ -13,6 +14,7 @@ lass Solution {
             for(int i = 1; i < account.size(); ++i){
                 email = account.get(i);
                 emailToName.put(email, name);
+                // If the email is new regular union with 1th node in list
                 if(!emailToID.containsKey(email)){
                     emailToID.put(email, id++);
                 }
@@ -30,6 +32,8 @@ lass Solution {
             answer.computeIfAbsent(currParent, k -> new ArrayList<String>()).add(address);
         }
         // Now to create each of the answer lists into their rightful names
+        // Each profile now has all their rightful emails, but now we need to put the name at the front
+        // (this is a use for emailToName).
         for(List<String> profile : answer.values()){
             Collections.sort(profile);
             profile.add(0, emailToName.get(profile.get(0)));
@@ -42,6 +46,7 @@ lass Solution {
 class DSJ {
     static int[] parent;
     // Setting each of the nodes to be pointing at themselves
+    // Large upper bound for the number of nodes
     public DSJ(){
         parent = new int[10001];
         for(int i = 0; i <= 10000; ++i)

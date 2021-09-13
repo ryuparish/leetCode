@@ -7,9 +7,10 @@ def distinct_subarrays(nums,K):
 		# odd numbers the subset would contain if 
         k = 0
         check = set()
+        # This loop below checks the sliding window of size i.
 		# k will slowly become a further and further "lag pointer"
 		# because j will start at an incrementally further position
-		# each time
+		# each time.
         for j in range(i,n):
 			# Activates only on the first iteration of i
             if i == 0:
