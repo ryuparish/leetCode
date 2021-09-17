@@ -8,13 +8,13 @@ public:
         int d = matrix.size() - 1; // Translates to the bottom row moving upwards
         int l = 0; // Translates to the leftmost column moving right
         // Representation of the pointers
-        // L/U| | | | | | | | | R
+        //  L | | | | | | | | |R/U
         //   -------------------
         //    | | | | | | | | |
         //   -------------------
         //    | | | | | | | | |
         //   -------------------
-        //  D | | | | | | | | |
+        //    | | | | | | | | | D
         //
         //  The Crux:
         //      The movement of the top row moving left to right relies on the left and right pointers but also needs to increment the up pointer,
