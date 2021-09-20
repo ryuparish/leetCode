@@ -1,0 +1,10 @@
+Tips:
+    - Sometimes separating a piece of logic into a separate function can
+    simplify the algorithm entirely.
+
+    - Sometimes trying to be more leet can make the problem either very
+    difficult or impossible. Always consider simpler methods if they
+    are feasible.
+
+    - Make sure you are very versatile with initialzation of variables
+    and their correct values. This can be a brainfuck!
