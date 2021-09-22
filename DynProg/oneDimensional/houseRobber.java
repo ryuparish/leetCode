@@ -16,7 +16,7 @@
 //        // We add an additional zero at the end to avoid the segfault in the first iteration
 //        // ie. dp[i+2]
 //        int[] dp = new int[maxLength + 1];
-//        dp[maxLength] = nums[maxLength];
+//        dp[maxLength] = 0;
 //        dp[maxLength-1] = nums[maxLength-1];
 //        
 //        // Dynamic programming backwards // Note that this works for length 1,2 edge cases

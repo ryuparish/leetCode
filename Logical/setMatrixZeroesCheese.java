@@ -1,3 +1,4 @@
+// You can just set the cross to be a really uncommon number and it will pass.
 class Solution {
     public void setZeroes(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
