@@ -21,6 +21,7 @@ Tree/maxPathSum.cpp
 Tree/BTRightSideView.java
 Tree/BTLevelOrder.java
 StacksAndQueues/exclusiveTimeOfFunctions.java
+StacksAndQueues/removeKDigits.java
 StacksAndQueues/minStack.java
 StacksAndQueues/minRemovalToMakeValid.java
 StacksAndQueues/minimumAddToMakeParenthesis.java
@@ -53,6 +54,7 @@ linkedList/LRUCache.java
 linkedList/swapNodesInPairs.java
 linkedList/removeDuplicatesCompletely.java
 linkedList/removeVal.java
+linkedList/hitCounter.java
 BinarySearch/findMedianSortedArrays.java
 BinarySearch/medianTwoSortedArrays.py
 BinarySearch/rotatedSortedArray.java
@@ -199,6 +201,7 @@ Logical/TwoPointers/intervalIntersection.java
 Logical/TwoPointers/compareVersion.java
 divideAndConquer/diffWaysToAdd.java
 Heaps/meetingRoomsII.java
+DynProg/coinChange.java
 DynProg/buySellStockII.java
 DynProg/buySellStockIIIBF.java
 DynProg/wildcardMatching.java
