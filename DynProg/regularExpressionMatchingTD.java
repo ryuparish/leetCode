@@ -1,48 +1,46 @@
-// I think they use the enum for the ability to use null and booleans only at the same time
-enum Result {
-    TRUE, FALSE
-}
-
-// We start at the bottom with no answer, but we recurse towards the top and bring down the answer
-// (top down)
+// Gist: We recurse down the pattern and string with two pointers and memoize each result we get.
+// The tricky part is the * character. When we recurse we get the match value out of convenience and then
+// we need to simulate possibly skipping the value completely if the next value is a star, or counting the
+// value in the text string and staying on the letter before the star in the pattern. Finally, if no star,
+// we consider continuing with moving both heads twice with recursion if they match.
+// TC: O(s*p), SC: O(s*p)
 class Solution {
-    Result[][] memo;
-
-    public boolean isMatch(String text, String pattern) {
-        // All values in this 2D array are initially null
-        memo = new Result[text.length() + 1][pattern.length() + 1];
-        return dp(0, 0, text, pattern);
+    // Utilizing the TRUE and FALSE identifiers along with null
+    enum Answer{
+        TRUE, FALSE;
     }
-
-    // We recurse from the bottom all the way to the top and detect for a possible chain of
-    // matches which signifies a valid way to reach a success state 
-    public boolean dp(int i, int j, String text, String pattern) {
-        // If recursive call has been memoized already
-        if (memo[i][j] != null) {
-            return memo[i][j] == Result.TRUE;
+    
+    public boolean isMatch(String s, String p) {
+        Answer[][] dp = new Answer[s.length()+1][p.length()+1];
+        return recurseRegex(s, p, 0, 0, dp);
+    }
+    
+    private boolean recurseRegex(String s, String p, int stringHead, int patternHead, Answer[][] dp){
+        // If spot is currently memoized
+        if(dp[stringHead][patternHead] != null){
+            return dp[stringHead][patternHead] == Answer.TRUE;
         }
-        boolean ans;
-
-        // Base Case for success returning "success" state. Both the pattern is processed and the
-        // string has been completely matched.
-        if (j == pattern.length()){
-            ans = i == text.length();
-        } 
+        boolean currResult;
+        // If both the string and the pattern are completely finished and matched
+        if(stringHead == s.length() && patternHead == p.length()){return true;}
+        
+        // If they are not finished recurse
         else{
-            // In all of these cases, short-circuiting is used to restrict any recursive calls that
-            // would include an out-of-boundaries indexing
-            boolean first_match = (i < text.length()/*short circuit */ &&
-                                   (pattern.charAt(j) == text.charAt(i) ||
-                                    pattern.charAt(j) == '.'));
-
-            if (j + 1 < pattern.length() /*short circuit */ && pattern.charAt(j+1) == '*'){
-                ans = (dp(i, j+2, text, pattern) /*short circuit */ ||
-                       first_match && dp(i+1, j, text, pattern));
-            } else {
-                ans = first_match /*short circuit */ && dp(i+1, j+1, text, pattern);
+            boolean match = stringHead < s.length() && patternHead < p.length() ? s.charAt(stringHead) == p.charAt(patternHead) || p.charAt(patternHead) == '.': false;
+            
+            // Dealing with start next
+            // Simulating if the next value is a star
+            if(patternHead < p.length()-1 && p.charAt(patternHead + 1) == '*'){
+                currResult = recurseRegex(s, p, stringHead, patternHead + 2, dp) || match && recurseRegex(s, p, stringHead+1, patternHead, dp);
             }
+            
+            // Dealing with anything else
+            // Simulating regular match
+            else{currResult = match && recurseRegex(s, p, stringHead+1, patternHead+1, dp);}
         }
-        memo[i][j] = ans ? Result.TRUE : Result.FALSE;
-        return ans;
+        
+        // Memoize
+        dp[stringHead][patternHead] = currResult ? Answer.TRUE : Answer.FALSE;
+        return currResult;
     }
 }

@@ -1,6 +1,8 @@
 // The idea to make the get function (which needs to update the linked list everytime) O(1), is to store
 // Nodes inside of the HashMap then just utilize the O(1) capability of the hashmap to remove and 
 // place in front a duplicate node in the linked list. The linked list provides the Least-Recent aspect.
+// 
+// The reasoning behind he doubly linked list is for the purpose of removing and adding nodes in O(1) time complexity.
 class LRUCache {
     class Node{
         Node prev, next;

@@ -1,6 +1,4 @@
-// Starting from answer and working backwards by iterating towards the bottom, when at a bottom, we 
-// recall to the top (bottom up).
-// BU and TD refers to where the recursion/iteration returns from.
+// Bottom Up approach 
 class Solution {
     public static boolean isMatch(String text, String pattern) {
         boolean[][] memo = new boolean[text.length() + 1][pattern.length() + 1];
@@ -23,9 +21,10 @@ class Solution {
                          pattern.charAt(j) == '.'));
 
                 // This is for checking if value iterated on before was a star, if so,
-                // we check the success of the iteration of the string that was one before that and "or" it
+                // we check the success of the iteration of the string that was one after that and "or" it
                 // with the success of ignoring the star entirely.
                 if(j+1 < pattern.length() && pattern.charAt(j+1) == '*'){
+                    // If the one behind is a star, then we can
                     memo[i][j] = memo[i][j+2] || (match && memo[i+1][j]);
                 }
 
