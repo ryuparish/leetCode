@@ -16,6 +16,7 @@ Tree/symmetricTree.java
 Tree/minDepthOfBT.java
 Tree/lowestCommonAncestorOfBT.java
 Tree/convertBSTtoSortedDoublyLinkedList.java
+Tree/countGoodNodesInBT.java
 Tree/convertSortedArrayToBST.cpp
 Tree/maxPathSum.cpp
 Tree/BTRightSideView.java
@@ -32,6 +33,7 @@ SlidingWindows/removeNthNodeFromList.java
 SlidingWindows/minimumSubstringWindow.cpp
 SlidingWindows/4sum.java
 SlidingWindows/containerWithMostWater.java
+SlidingWindows/paritionLabels.java
 SlidingWindows/largestRectangelinHistogramOptimal.java
 SlidingWindows/lengthOfLastWord.cpp
 SlidingWindows/largestRectangelinHistogram.java
@@ -42,6 +44,7 @@ SlidingWindows/trappingRainWater.java
 SlidingWindows/3sum.cpp
 SlidingWindows/reverseNodesInKGroup.java
 SlidingWindows/gumShoe/buySellStock.py
+PriorityQueue/topKFrequentWords.java
 DisjointSet/mergeAccounts.java
 linkedList/addTwoNumbersII.java
 linkedList/rotateList.java
@@ -71,14 +74,16 @@ Backtracking/NQueens.java
 Backtracking/combinationSumII.java
 Backtracking/combinationSum.java
 Backtracking/sudokuSolver.java
+Backtracking/generateParenthesis.java
 graph/numOfProvinces.java
-graph/courseScheduleII.java
 graph/leftmostColumnWith1.java
 graph/numOfConnectedComponentsUndirectedGraph.java
 graph/theMaze.java
-graph/courseSchedule.java
 graph/numberOfIslands.java
+graph/rottingOranges.java
 graph/wordSearch.java
+graph/bfs/courseScheduleII.java
+graph/bfs/courseSchedule.java
 OOP/exclusiveTimeOfFunctions.java
 BitManip/reverseBits.java
 BitManip/numberOf1Bits.java
@@ -145,6 +150,7 @@ Logical/mergeSortedArray.cpp
 Logical/addStrings.java
 Logical/validParenthesis.java
 Logical/nextPermutation.java
+Logical/subdomainVisitCount.java
 Logical/removeElement.java
 Logical/validParenthesis.cpp
 Logical/basicCalculatorII.java
@@ -157,6 +163,7 @@ Logical/permutations.java
 Logical/permutationSequenceOS.cpp
 Logical/mergeTwoSortedLists.cpp
 Logical/buildingWithOceanView.java
+Logical/expressiveWords.java
 Logical/multiplyStrings.java
 Logical/countPrimes.java
 Logical/pascalsTriangle.java
@@ -184,6 +191,7 @@ Logical/kthLargestElementinArray.java
 Logical/validPalindrom.py
 Logical/minimumAddToMakeParenthesis.java
 Logical/groupShiftedStrings.java
+Logical/singleNumber.java
 Logical/sortColors.java
 Logical/insertInterval.py
 Logical/permutationSequence.cpp
@@ -221,7 +229,6 @@ DynProg/regularExpressionMatchingBU.java
 DynProg/buySellStockIIIGreedy.java
 DynProg/productOfArrayExceptSelf.java
 DynProg/buySellStockIIImeng.java
-DynProg/generateParenthesis.java
 DynProg/regularExpressionMatchingTD.java
 DynProg/oneDimensional/houseRobberII.java
 DynProg/oneDimensional/jumpGameII.py
