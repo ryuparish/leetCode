@@ -13,6 +13,8 @@
  *     }
  * }
  */
+// Gist: We perform dfs with both nodes of the trees until there is a mismatch in existence or a mismatch in values. If they
+// are the same values, then we recurse until we find the same null(true) or a mismatch happens(false).
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         // Checking if the nodes are both null and should be returned

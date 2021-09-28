@@ -45,6 +45,7 @@ SlidingWindows/3sum.cpp
 SlidingWindows/reverseNodesInKGroup.java
 SlidingWindows/gumShoe/buySellStock.py
 PriorityQueue/topKFrequentWords.java
+PriorityQueue/minimumCostToConnectSticks.java
 DisjointSet/mergeAccounts.java
 linkedList/addTwoNumbersII.java
 linkedList/rotateList.java
@@ -59,7 +60,7 @@ linkedList/removeDuplicatesCompletely.java
 linkedList/removeVal.java
 linkedList/hitCounter.java
 BinarySearch/findMedianSortedArrays.java
-BinarySearch/medianTwoSortedArrays.py
+BinarySearch/medianTwoSortedArrays.java
 BinarySearch/rotatedSortedArray.java
 BinarySearch/searchRotatedArrayII.java
 BinarySearch/findRangeElementSortedArray.java
@@ -81,6 +82,7 @@ graph/numOfConnectedComponentsUndirectedGraph.java
 graph/theMaze.java
 graph/numberOfIslands.java
 graph/rottingOranges.java
+graph/validSudoku.java
 graph/wordSearch.java
 graph/bfs/courseScheduleII.java
 graph/bfs/courseSchedule.java
@@ -152,6 +154,7 @@ Logical/validParenthesis.java
 Logical/nextPermutation.java
 Logical/subdomainVisitCount.java
 Logical/removeElement.java
+Logical/randomizedSet.java
 Logical/validParenthesis.cpp
 Logical/basicCalculatorII.java
 Logical/containsDuplicate.java
