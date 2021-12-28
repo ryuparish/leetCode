@@ -31,6 +31,7 @@ SlidingWindows/longestPalindromicSubstring.java
 SlidingWindows/minimumSubstringWindowOptimal.cpp
 SlidingWindows/removeNthNodeFromList.java
 SlidingWindows/minimumSubstringWindow.cpp
+SlidingWindows/stringCompression.java
 SlidingWindows/4sum.java
 SlidingWindows/containerWithMostWater.java
 SlidingWindows/paritionLabels.java
@@ -85,8 +86,13 @@ graph/rottingOranges.java
 graph/validSudoku.java
 graph/wordSearch.java
 graph/bfs/courseScheduleII.java
+graph/bfs/snakesAndLadders.java
 graph/bfs/courseSchedule.java
+graph/bfs/minimumKnightMoves.java
+graph/bfs/minesweeperOneClick.java
 OOP/exclusiveTimeOfFunctions.java
+OOP/designUndergroundSystem.java
+OOP/timeBasedKeyValueStore.java
 BitManip/reverseBits.java
 BitManip/numberOf1Bits.java
 BitManip/divide.java
@@ -149,6 +155,7 @@ Logical/checkSubarraySum.java
 Logical/setMatrixZeroes.java
 Logical/integerToRoman.java
 Logical/mergeSortedArray.cpp
+Logical/gasStation.java
 Logical/addStrings.java
 Logical/validParenthesis.java
 Logical/nextPermutation.java
@@ -176,7 +183,6 @@ Logical/isHappy.java
 Logical/4SumII.java
 Logical/kClosestPoints.py
 Logical/setMatrixZeroesCheese.java
-Logical/reverseInteger.java
 Logical/kClosestPoints.java
 Logical/minDominoRotations.java
 Logical/rotateImage.java
@@ -185,6 +191,7 @@ Logical/reverseWordsInAString.java
 Logical/removeDuplicates.cpp
 Logical/multiplyStrings2.cpp
 Logical/maximumSubarray.cpp
+Logical/reorganizeString.java
 Logical/zigzagConversion.java
 Logical/validSudoku.py
 Logical/ticTacToe.java
@@ -210,6 +217,7 @@ Logical/longestValidParentheses.java
 Logical/factorialTrailingZeroes.java
 Logical/TwoPointers/intervalIntersection.java
 Logical/TwoPointers/compareVersion.java
+Logical/mathRelated/reverseInteger.java
 divideAndConquer/diffWaysToAdd.java
 Heaps/meetingRoomsII.java
 DynProg/coinChange.java

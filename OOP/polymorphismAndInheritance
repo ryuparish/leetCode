@@ -1,0 +1,16 @@
+This is the model that inheritance follows for Java:
+
+    <Promise Type> myObject = new <Actual Type>();
+
+        - myObject will error if you call anything outside of the <Promise Type>'s methods.
+        The idea is to limit the <Actual Type> to only use it as a <Promise Type>.
+    
+        - The <Actual Type> must be a super set of all of the methods and data in the <Promise Type>.
+    
+        - The <Promise Type> inherits all of the promised methods from the <Actual Type>.
+
+Then there is casting , which allows you to temporarily change the promise type of the same object.
+    ((<Other Promise Type>) myObject).<Other Promise Type Method>();
+
+        - The restriction here is that the <Other Promise Type>'s methods must be a subset of the 
+        <Actual Type> defined earlier.
