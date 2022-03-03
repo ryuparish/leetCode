@@ -2,7 +2,7 @@ class Solution{
     public int minDistance(String word1, String word2) {
         int m = word1.length(), n = word2.length();
         // This is a Top-Down Approach
-        // The spot i, j DOES NOT represent typing the substrings word1[0, i] and word2[0, j]. 
+        // The spot i, j represents untyping the substrings word1[0, i] and word2[0, j] in the most efficient way possible with our given edit options. 
         // It is a representation of the optimal number of edits it takes to TRANSFORM those substrings 
         // from one to another (substring1 to substring2 or substring 2 to substring1, they will have the same edit distance).
         //

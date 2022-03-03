@@ -1,0 +1,8 @@
+String Matching
+
+    Rabin-Karp: 
+
+        TC: O(nm - (n-1)) -> O(n*m) where n and m are sizes of the two strings. (n-1) is for sliding window not going all the way unless the window size is 1.
+            This is due to the case of every letter match every time, e.g. searching for aaa in aaaaaaaaaaaa.
+
+        SC: O(1), just use the arrays and two pointers.
