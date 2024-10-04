@@ -1,3 +1,5 @@
+// TC: O(n), SC: O(n)
+// Looking at the original string, make a vowel-swapped version by using two pointers from the front and back to find and switch vowels.
 class Solution {
     public String reverseVowels(String s) {
         int frontPointer = 0;

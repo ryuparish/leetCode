@@ -1,3 +1,5 @@
+// TC: O(logn), SC: O(1)
+// First check if the strings contain the same letters (using the .equals logic) then find gcd of string lengths.
 class Solution {
 
     public int gcd(int str1Length, int str2Length) {
