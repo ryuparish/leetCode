@@ -1,26 +1,19 @@
 public static String timeConversion(String s) {
 // Write your code here
-  String amOrPm = s.substring(s.length() - 2);
-  int hours = Integer.parseInt(s.substring(0, 2));
-  String hoursString = null;
-  String minAndSecs = s.substring(3, s.length() - 2);
-  StringBuilder sb = new StringBuilder();
-  if (amOrPm.equals("AM")) {
-    if (hours == 12) {
-      sb.append("00");
-    } else if ((hours / 10) != 1){ // If earlier than 10AM
-      sb.append("0" + String.valueOf(hours));
-    } else {
-      sb.append(String.valueOf(hours));
-    }
-  } else { // If PM
-    if (hours != 12) {
-      sb.append(String.valueOf(12 + hours));
-    } else {
-      sb.append("12");
-    }
-  }
-  sb.append(":").append(minAndSecs);
-  return sb.toString();
-}
+    int hour = Integer.parseInt(s.substring(0, 2));
+    String min = s.substring(3,5);
+    String seconds = s.substring(6,8);
+    String amPm = s.substring(8,10);
     
+    // Convert to PM time, check for 12
+    if (amPm.equals("PM")){
+        if (hour != 12){
+            hour += 12;
+        }
+    } else {
+        if (hour == 12){
+            hour = 0;
+        }
+    }
+    return String.format("%02d:%s:%s", hour, min, seconds);
+}
